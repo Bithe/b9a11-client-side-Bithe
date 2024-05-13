@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import AddARecommendation from "../../components/AddARecommendation/AddARecommendation";
-import AllRecommendation from "../../components/AllRecommendation";
+import AllRecommendation from "../../components/AddARecommendation/AllRecommendation";
 
 const QueryDetails = () => {
   //     const { user } = useContext(AuthContext

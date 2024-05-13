@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AddQueries = () => {
   const { user } = useContext(AuthContext);
@@ -49,10 +50,10 @@ const AddQueries = () => {
         addQueriesInfo
       );
       console.log(data);
-      alert("Query added successfully!");
+      toast("Query added successfully!");
     } catch (error) {
       console.error("Error adding query:", error);
-      alert("Error adding query. Please try again later.");
+      toast.error("Error adding query. Please try again later.");
     }
   };
 

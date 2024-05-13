@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const MyRecommendations = () => {
   const { user } = useContext(AuthContext);
@@ -8,7 +9,10 @@ const MyRecommendations = () => {
   console.log(allMyRecommendation);
 
   useEffect(() => {
-    const getAllMyRecommendation = async () => {
+   
+    getAllMyRecommendation();
+  }, [user]);
+   const getAllMyRecommendation = async () => {
       try {
         const { data } = await axios.get(
           `http://localhost:5000/my-recommendations/${user?.email}`
@@ -18,8 +22,40 @@ const MyRecommendations = () => {
         console.error("Error fetching queries:", error);
       }
     };
-    getAllMyRecommendation();
-  }, [user]);
+
+
+ // DELETE FUNC
+const handleDelete = async (id) => {
+  console.log(id);
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      try {
+        const response = await axios.delete(`http://localhost:5000/recommendation/${id}`);
+        const data = response.data;
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Craft has been deleted.",
+            icon: "success"
+          });
+          getAllMyRecommendation(); // Assuming this function retrieves updated query list
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  });
+};
   return (
     <div className="container mx-auto lg:px-20 lg:py-8">
       <section className="container px-4 mx-auto">
@@ -84,9 +120,9 @@ const MyRecommendations = () => {
                         <td title={recommendation.recommendationQueryTitle} className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {recommendation.recommendationQueryTitle.substring(0,50)}....
                         </td>
-                        <td className="px-4 py-4 text-sm whitespace-nowrap">
-                          <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-red-500 bg-red-100/60 dark:bg-gray-800">
-                            <h2 className="text-sm font-semibold">Delete</h2>
+                        <td onClick={() => handleDelete(recommendation._id)} className="px-4 py-4  text-sm whitespace-nowrap">
+                          <div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-white  dark:bg-gray-800 bg-red-600">
+                            <button className="text-sm font-semibold">Delete</button>
                           </div>
                         </td>
                       </tr>

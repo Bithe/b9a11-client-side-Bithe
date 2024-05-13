@@ -1,20 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
-const AllRecommendation = ({ queryId }) => {
+const AllRecommendation = () => {
+
+  const query = useLoaderData();
+
+
+  console.log(query);
+  const {_id} = query;
+  
   const [recommendations, setRecommendations] = useState([]);
 
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/recommendations/${queryId}`);
+        const response = await axios.get(`http://localhost:5000/recommendations/${_id}`);
         setRecommendations(response.data);
       } catch (error) {
         console.error("Error fetching recommendations:", error);
       }
     };
     fetchRecommendations();
-  }, [queryId]); // Fetch recommendations whenever queryId changes
+  }, [_id]); 
 
   return (
     <div>
@@ -22,7 +30,7 @@ const AllRecommendation = ({ queryId }) => {
         <div key={recommendation._id} className="max-w-lg mx-auto border px-6 py-4 rounded-lg">
           <div className="flex items-center mb-6">
             <img
-              src={recommendation.userPhoto} // Use recommendation user photo
+              src={recommendation.recommendedProductImage} 
               alt="Avatar"
               className="w-12 h-12 rounded-full mr-4"
             />

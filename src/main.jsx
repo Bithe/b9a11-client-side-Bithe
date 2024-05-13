@@ -16,11 +16,14 @@ import AddQueries from "./Pages/AddQueries/AddQueries";
 import UpdateMyQueries from "./Pages/UpdateMyQueries/UpdateMyQueries";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import QueryDetails from "./Pages/QueryDetails/QueryDetails";
+import ErrorPage from "./components/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+
     children: [
       {
         path: "/",

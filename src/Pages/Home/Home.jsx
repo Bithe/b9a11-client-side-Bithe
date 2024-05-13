@@ -11,6 +11,7 @@
 
 import { Link } from "react-router-dom";
 import SwiperCarousel from "../../components/Swiper/SwiperCarousel";
+import RecentQueries from "./RecentQueries/RecentQueries";
 
 const Home = () => {
   return (
@@ -33,6 +34,24 @@ const Home = () => {
           </button>
         </Link>
       </div>
+
+      {/* RECENT QUERIES */}
+
+      <section className="my-10">
+        <div className="text-center my-8">
+          <h3 className="text-4xl font-bold">All Reco</h3>
+
+          <p className="space-y-8 m-8">
+            Italian cuisine is renowned for its rich flavors and comforting
+            dishes, and pasta is undoubtedly one of its most beloved creations.{" "}
+            <br /> Whether it is a hearty bowl of spaghetti Bolognese or
+            delicate filled with creamy ricotta, Italian pasta dishes never fail
+            to tantalize the taste buds.{" "}
+          </p>
+        </div>
+        <RecentQueries></RecentQueries>
+      </section>
+      
     </div>
   );
 };
