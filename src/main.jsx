@@ -38,23 +38,22 @@ const router = createBrowserRouter([
 
       {
         path: "/recommendations-for-me",
-        element: <RecommendationsForMe></RecommendationsForMe>,
+        element: <PrivateRoute><RecommendationsForMe></RecommendationsForMe></PrivateRoute>,
       },
 
       {
         path: "/my-queries",
-        element: <MyQueries></MyQueries>,
+        element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
       },
 
       {
         path: "/add-queries",
-        element: <AddQueries></AddQueries>,
+        element: <PrivateRoute><AddQueries></AddQueries></PrivateRoute>,
       },
       {
         path: "/update-my-queries/:id",
         element: (
           <PrivateRoute>
-            {" "}
             <UpdateMyQueries></UpdateMyQueries>
           </PrivateRoute>
         ),

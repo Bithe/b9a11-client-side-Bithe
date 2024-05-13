@@ -89,9 +89,12 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 
       const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+
+      setUser(null);
+      setLoader(false);
       if (currentUser) {
         console.log(currentUser);
-        const loggedUser = { email: userEmail };
         axios.post('http://localhost:5000/jwt' ,loggedUser, {withCredentials: true})
         .then((res) => {
           console.log('token response', res.data);
@@ -100,14 +103,13 @@ const AuthProvider = ({ children }) => {
         setLoader(false);
       } else {
         console.log("logout");
-        axios.post('http://localhost:5000/logout', { email: userEmail },{
+        axios.post('http://localhost:5000/logout', loggedUser,{
           withCredentials: true
         })
         .then(res=>{
           console.log(res.data);
         })
-        setUser(null);
-        setLoader(false);
+     
       }
     });
 
