@@ -48,15 +48,6 @@ const SocialLogin = () => {
         <span className="hidden mx-2 sm:inline">Sign in with Google</span>
       </button>
 
-      {/* GITHUB */}
-
-      {/* <button
-        onClick={() => handleSocialLogin(githubLogin)}
-        className="btn bg-black text-white"
-      >
-        {" "}
-        Github Login
-      </button> */}
 
       {/* TWITTER LOGIN */}
       {/* <button
