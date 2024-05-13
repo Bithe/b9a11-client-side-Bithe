@@ -12,10 +12,14 @@
 import { Link } from "react-router-dom";
 import SwiperCarousel from "../../components/Swiper/SwiperCarousel";
 import RecentQueries from "./RecentQueries/RecentQueries";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <div className="container mx-auto lg:px-20 lg:py-8">
+      <Helmet>
+        <title>ProdSwap | Home</title>
+      </Helmet>
       <section className="my-8">
         <SwiperCarousel></SwiperCarousel>
       </section>
@@ -51,7 +55,6 @@ const Home = () => {
         </div>
         <RecentQueries></RecentQueries>
       </section>
-      
     </div>
   );
 };

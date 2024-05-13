@@ -19,7 +19,7 @@ const AllMyQueries = () => {
   const getAllMyQueries = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/my-queries/${user.email}`
+        `http://localhost:5000/my-queries/${user.email}`, {withCredentials: true}
       );
       setAllMyQueries(data);
     } catch (error) {

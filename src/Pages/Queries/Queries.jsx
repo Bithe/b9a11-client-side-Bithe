@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Queries = () => {
@@ -20,6 +21,9 @@ const Queries = () => {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Helmet>
+        <title>ProdSwap | Queries</title>
+      </Helmet>
       {/* Search */}
 
       <section className="mt-12 lg:mt-24">

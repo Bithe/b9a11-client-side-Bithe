@@ -85,38 +85,69 @@ const AuthProvider = ({ children }) => {
   };
 
   // ONCHANGE SETUP
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 
-      const userEmail = currentUser?.email || user?.email;
-      const loggedUser = { email: userEmail };
+  //     const userEmail = currentUser?.email || user?.email;
+  //     const loggedUser = { email: userEmail };
 
-      setUser(null);
-      setLoader(false);
+  //     setUser(null);
+  //     setLoader(false);
+  //     if (currentUser) {
+  //       console.log(currentUser);
+  //       axios.post('http://localhost:5000/jwt' ,loggedUser, {withCredentials: true})
+  //       .then((res) => {
+  //         console.log('token response', res.data);
+  //       });
+  //       setUser(currentUser);
+  //       setLoader(false);
+  //     } else {
+  //       console.log("logout");
+  //       axios.post('http://localhost:5000/logout', loggedUser,{
+  //         withCredentials: true
+  //       })
+  //       .then(res=>{
+  //         console.log(res.data);
+  //       })
+     
+  //     }
+  //   });
+
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, [reload]);
+  // ONCHANGE SETUP
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    try {
       if (currentUser) {
+        const userEmail = currentUser.email;
+        const loggedUser = { email: userEmail };
+
         console.log(currentUser);
-        axios.post('http://localhost:5000/jwt' ,loggedUser, {withCredentials: true})
-        .then((res) => {
-          console.log('token response', res.data);
-        });
+        const response = await axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true });
+        console.log('Token response', response.data);
+
         setUser(currentUser);
         setLoader(false);
       } else {
-        console.log("logout");
-        axios.post('http://localhost:5000/logout', loggedUser,{
-          withCredentials: true
-        })
-        .then(res=>{
-          console.log(res.data);
-        })
-     
-      }
-    });
+        console.log("Logout");
+        const response = await axios.post('http://localhost:5000/logout', null, { withCredentials: true });
+        console.log(response.data);
 
-    return () => {
-      unsubscribe();
-    };
-  }, [reload]);
+        setUser(null);
+        setLoader(false);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  });
+
+  // Cleanup function
+  return () => unsubscribe();
+}, []); // Empty dependency array to run effect only once on mount
+
 
   return (
     <div>
