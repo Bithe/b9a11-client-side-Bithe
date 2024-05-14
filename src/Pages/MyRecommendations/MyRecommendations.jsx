@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyRecommendations = () => {
   const { user } = useContext(AuthContext);
@@ -58,6 +59,9 @@ const handleDelete = async (id) => {
 };
   return (
     <div className="container mx-auto lg:px-20 lg:py-8">
+        <Helmet>
+        <title>ProdSwap | My Recommendations</title>
+      </Helmet>
       <section className="container px-4 mx-auto">
         <div className="flex flex-col">
           <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

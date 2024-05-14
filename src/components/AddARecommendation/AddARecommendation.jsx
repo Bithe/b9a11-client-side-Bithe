@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddARecommendation = () => {
   const { user } = useContext(AuthContext);
@@ -23,7 +24,7 @@ const AddARecommendation = () => {
     e.preventDefault();
 
     if (user && user.email === email) {
-      return alert("no!");
+      return toast("Not Permitted! You cant recommend in your own post.");
     }
 
     // QUERY POSTED ID
@@ -64,10 +65,10 @@ const AddARecommendation = () => {
         recommendationData
       );
       console.log(data);
-      alert("Recommendation added successfully!");
+      toast("Recommendation added successfully!");
     } catch (error) {
       console.error("Error adding query:", error);
-      alert("Error adding Recommendation. Please try again later.");
+      toast("Error adding Recommendation. Please try again later.");
     }
   };
 
