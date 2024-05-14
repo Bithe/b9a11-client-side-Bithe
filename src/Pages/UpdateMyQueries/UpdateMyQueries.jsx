@@ -39,6 +39,7 @@ const UpdateMyQueries = () => {
             <div className="flex items-center">
               <FaTrademark className="text-gray-700 dark:text-gray-400 mr-2" />
               <input
+              defaultValue={query.productBrand}
                 type="text"
                 id="productBrand"
                 name="productBrand"
@@ -50,6 +51,7 @@ const UpdateMyQueries = () => {
             <div className="flex items-center">
               <FaImage className="text-gray-700 dark:text-gray-400 mr-2" />
               <input
+              defaultValue={query.productImage}
                 type="url"
                 id="productImage"
                 name="productImage"
@@ -61,6 +63,7 @@ const UpdateMyQueries = () => {
             <div className="flex items-center">
               <FaQuestionCircle className="text-gray-700 dark:text-gray-400 mr-2" />
               <input
+              defaultValue={query.queryTitle}
                 type="text"
                 id="queryTitle"
                 name="queryTitle"
@@ -72,6 +75,7 @@ const UpdateMyQueries = () => {
             <div className="flex items-center">
               <FaExclamationCircle className="text-gray-700 dark:text-gray-400 mr-2" />
               <textarea
+              defaultValue={query.boycottingReason}
                 id="boycottingReason"
                 name="boycottingReason"
                 placeholder="Boycotting Reason Details"
