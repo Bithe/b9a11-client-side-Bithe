@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 import SwiperCarousel from "../../components/Swiper/SwiperCarousel";
 import RecentQueries from "./RecentQueries/RecentQueries";
 import { Helmet } from "react-helmet-async";
+import TopUsers from "./TopUsers/TopUsers";
+import TrailTales from "./TrailTales/TrailTales";
 
 const Home = () => {
   return (
@@ -43,17 +45,49 @@ const Home = () => {
 
       <section className="my-10">
         <div className="text-center my-8">
-          <h3 className="text-4xl font-bold">All Reco</h3>
+          <h3 className="text-4xl font-bold">
+            Latest Hiking Queries: Unraveling the Trails
+          </h3>
 
           <p className="space-y-8 m-8">
-            Italian cuisine is renowned for its rich flavors and comforting
-            dishes, and pasta is undoubtedly one of its most beloved creations.{" "}
-            <br /> Whether it is a hearty bowl of spaghetti Bolognese or
-            delicate filled with creamy ricotta, Italian pasta dishes never fail
-            to tantalize the taste buds.{" "}
+            Are you ready to delve into the world of hiking queries?
+            <br /> Join us as we explore the most intriguing questions, seek
+            expert advice, and share insights from fellow hikers.
           </p>
         </div>
         <RecentQueries></RecentQueries>
+      </section>
+
+      {/* TOP USERS  */}
+
+      <section className="my-10">
+        <div className="text-center my-8">
+          <h3 className="text-4xl font-bold">
+            Explore Our Most Active Hikers: Top Contributors
+          </h3>
+
+          <p className="space-y-8 m-8">
+            Discover the driving force behind our vibrant hiking community – our
+            top contributors!
+            <br /> These dedicated individuals have shared their knowledge,
+            experiences, and passion for hiking
+          </p>
+        </div>
+        <TopUsers></TopUsers>{" "}
+      </section>
+      {/* TOP USERS  */}
+
+      <section className="my-10">
+        <div className="text-center my-8">
+          <h3 className="text-4xl font-bold">
+          Discover Your Adventure
+          </h3>
+
+          <p className="space-y-8 m-8">
+          Find the Gear You Need for Your Next Hiking Expedition
+          </p>
+        </div>
+        <TrailTales></TrailTales>{" "}
       </section>
     </div>
   );

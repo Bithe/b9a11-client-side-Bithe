@@ -2,7 +2,7 @@ import fb from "../../assets/images/fb.png";
 import lk from "../../assets/images/lk.png";
 function Footer() {
   return (
-    <footer className="px-4 divide-y bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+    <footer className="px-4 divide-y bg-teal-500 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
       <div className="container mx-auto lg:px-20 lg:py-8">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
       <div className="lg:w-1/3">
@@ -65,7 +65,7 @@ function Footer() {
     </div>
       </div>
   
-    <div className="py-6 text-sm text-center text-gray-400 dark:text-gray-600">© 1968 Company ProdSwap. All rights reserved.</div>
+    <div className="py-6 text-sm text-center text-white dark:text-gray-600">© 1968 Company ProdSwap. All rights reserved.</div>
   </footer>
   );
 }
