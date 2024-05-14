@@ -160,7 +160,7 @@ useEffect(() => {
 
   // Cleanup function
   return () => unsubscribe();
-}, []); // Empty dependency array to run effect only once on mount
+}, [reload ]); 
 
 
   return (
