@@ -18,7 +18,7 @@ const RecentQueries = () => {
   }, []);
 
   // Filter the queries to display only the most recent 6-8 posts
-  const recentPosts = allQueries.slice(0, 8); 
+  const recentPosts = allQueries.slice(0, 6); 
 
   return (
 <div className="my-24 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 flex-grow">
