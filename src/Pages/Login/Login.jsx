@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>ArtScape | Login</title>
+        <title>ProdSwap | Login</title>
       </Helmet>
 
       <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
@@ -176,7 +176,7 @@ const Login = () => {
                         <NavLink to="/register">
                           <button
                             type="button"
-                            className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xl font-bold uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-danger-50/50 hover:text-danger-600 focus:border-danger-600 focus:bg-danger-50/50 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-rose-950 dark:focus:bg-rose-950"
+                            className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xl font-bold uppercase leading-normal text-black transition duration-150 ease-in-out hover:border-danger-600 hover:bg-danger-50/50 hover:text-danger-600 focus:border-danger-600 focus:bg-danger-50/50 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-teal-950 dark:focus:bg-teal-950"
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
                           >

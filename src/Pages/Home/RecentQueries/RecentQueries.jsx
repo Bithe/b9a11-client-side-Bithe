@@ -9,7 +9,7 @@ const RecentQueries = () => {
     const getAllQueries = async () => {
       try {
         const { data } = await axios.get(
-          `prod-swap-hub-server.vercel.app/recent-queries`
+          `prod-swap-hub-server.vercel.app/recent-queries`, {withCredentials:true}
         );
         setAllQueries(data);
       } catch (error) {

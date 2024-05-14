@@ -44,7 +44,7 @@ const handleDelete = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const response = await axios.delete(`prod-swap-hub-server.vercel.app/queries/${id}`);
+        const response = await axios.delete(`prod-swap-hub-server.vercel.app/queries/${id}`, {withCredentials:true});
         const data = response.data;
         console.log(data);
         if (data.deletedCount > 0) {

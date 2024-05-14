@@ -81,7 +81,7 @@ const Register = () => {
     <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
       <div className="container h-full p-10">
         <Helmet>
-          <title>ArtScape | Register</title>
+          <title>ProdSwap | Register</title>
         </Helmet>
 
         <div className="flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
