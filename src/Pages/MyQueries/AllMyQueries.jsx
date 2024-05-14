@@ -19,8 +19,7 @@ const AllMyQueries = () => {
   const getAllMyQueries = async () => {
     try {
       const { data } = await axios.get(
-        `prod-swap-hub-server.vercel.app/my-queries/${user.email}`, {withCredentials: true}
-      );
+        `https://prod-swap-hub-server.vercel.app/my-queries/${user.email}`);
       setAllMyQueries(data);
     } catch (error) {
       console.error("Error fetching queries:", error);
@@ -44,7 +43,7 @@ const handleDelete = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const response = await axios.delete(`prod-swap-hub-server.vercel.app/queries/${id}`, {withCredentials:true});
+        const response = await axios.delete(`https://prod-swap-hub-server.vercel.app/queries/${id}`);
         const data = response.data;
         console.log(data);
         if (data.deletedCount > 0) {

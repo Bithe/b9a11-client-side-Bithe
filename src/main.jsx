@@ -32,9 +32,20 @@ const router = createBrowserRouter([
 
       {
         path: "/queries",
-        element: <Queries></Queries>,
-        loader: () => fetch("prod-swap-hub-server.vercel.app/queries"),
+        element: <Queries />,
+        loader: () => fetch("https://prod-swap-hub-server.vercel.app/queries")
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .catch(error => {
+            console.error('Error fetching queries:', error);
+            throw error;
+          })
       },
+      
 
       {
         path: "/recommendations-for-me",
@@ -70,7 +81,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`prod-swap-hub-server.vercel.app/query/${params.id}`),
+          fetch(`https://prod-swap-hub-server.vercel.app/query/${params.id}`),
       },
 
       {
@@ -81,7 +92,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`prod-swap-hub-server.vercel.app/query/${params.id}`),
+          fetch(`https://prod-swap-hub-server.vercel.app/query/${params.id}`),
       },
 
       {

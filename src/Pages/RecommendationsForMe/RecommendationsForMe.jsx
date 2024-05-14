@@ -11,8 +11,7 @@ const RecommendationsForMe = () => {
       const getAllMyRecommendation = async () => {
         try {
           const { data } = await axios.get(
-            `prod-swap-hub-server.vercel.app/recommendations-for-me/${user?.email}`, {withCredentials:true}
-          );
+            `https://prod-swap-hub-server.vercel.app/recommendations-for-me/${user?.email}`);
           setAllMyRecommendation(data);
         } catch (error) {
           console.error("Error fetching queries:", error);
