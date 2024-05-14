@@ -11,7 +11,7 @@ const RecommendationsForMe = () => {
       const getAllMyRecommendation = async () => {
         try {
           const { data } = await axios.get(
-            `http://localhost:5000/recommendations-for-me/${user?.email}`
+            `prod-swap-hub-server.vercel.app/recommendations-for-me/${user?.email}`
           );
           setAllMyRecommendation(data);
         } catch (error) {

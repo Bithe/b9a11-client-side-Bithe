@@ -16,7 +16,7 @@ const MyRecommendations = () => {
    const getAllMyRecommendation = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/my-recommendations/${user?.email}`
+          `prod-swap-hub-server.vercel.app/my-recommendations/${user?.email}`
         );
         setAllMyRecommendation(data);
       } catch (error) {
@@ -40,7 +40,7 @@ const handleDelete = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const response = await axios.delete(`http://localhost:5000/recommendation/${id}`);
+        const response = await axios.delete(`prod-swap-hub-server.vercel.app/recommendation/${id}`);
         const data = response.data;
         console.log(data);
         if (data.deletedCount > 0) {

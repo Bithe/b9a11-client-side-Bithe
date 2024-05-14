@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/queries",
         element: <Queries></Queries>,
-        loader: () => fetch("http://localhost:5000/queries"),
+        loader: () => fetch("prod-swap-hub-server.vercel.app/queries"),
       },
 
       {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/query/${params.id}`),
+          fetch(`prod-swap-hub-server.vercel.app/query/${params.id}`),
       },
 
       {
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/query/${params.id}`),
+          fetch(`prod-swap-hub-server.vercel.app/query/${params.id}`),
       },
 
       {

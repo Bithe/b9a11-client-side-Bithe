@@ -95,7 +95,7 @@ const AuthProvider = ({ children }) => {
   //     setLoader(false);
   //     if (currentUser) {
   //       console.log(currentUser);
-  //       axios.post('http://localhost:5000/jwt' ,loggedUser, {withCredentials: true})
+  //       axios.post('prod-swap-hub-server.vercel.app/jwt' ,loggedUser, {withCredentials: true})
   //       .then((res) => {
   //         console.log('token response', res.data);
   //       });
@@ -103,7 +103,7 @@ const AuthProvider = ({ children }) => {
   //       setLoader(false);
   //     } else {
   //       console.log("logout");
-  //       axios.post('http://localhost:5000/logout', loggedUser,{
+  //       axios.post('prod-swap-hub-server.vercel.app/logout', loggedUser,{
   //         withCredentials: true
   //       })
   //       .then(res=>{
@@ -126,14 +126,14 @@ useEffect(() => {
         const loggedUser = { email: userEmail };
 
         console.log(currentUser);
-        const response = await axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true });
+        const response = await axios.post('prod-swap-hub-server.vercel.app/jwt', loggedUser, { withCredentials: true });
         console.log('Token response', response.data);
 
         setUser(currentUser);
         setLoader(false);
       } else {
         console.log("Logout");
-        const response = await axios.post('http://localhost:5000/logout', null, { withCredentials: true });
+        const response = await axios.post('prod-swap-hub-server.vercel.app/logout', null, { withCredentials: true });
         console.log(response.data);
 
         setUser(null);

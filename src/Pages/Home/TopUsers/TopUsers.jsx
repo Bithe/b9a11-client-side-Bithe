@@ -12,7 +12,7 @@ const TopUsers = () => {
     {/* Team Member 1 */}
     <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center">
       <img
-        src="https://spacema-dev.com/elevate/assets/images/team/1.jpg"
+        src="https://i.ibb.co/bW0pDvD/tu4.jpg"
         alt="Team Member 1"
         className="w-full rounded-full mb-4"
       />
@@ -23,7 +23,7 @@ const TopUsers = () => {
     {/* Team Member 2 */}
     <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center">
       <img
-        src="https://spacema-dev.com/elevate/assets/images/team/4.jpg"
+        src="https://i.ibb.co/30PBNjb/tu3.jpg"
         alt="Team Member 2"
         className="w-full rounded-full mb-4"
       />
@@ -34,7 +34,7 @@ const TopUsers = () => {
     {/* Team Member 3 */}
     <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center">
       <img
-        src="https://spacema-dev.com/elevate/assets/images/team/3.jpg"
+        src="https://i.ibb.co/Gvbbn4w/tu2.jpg"
         alt="Team Member 3"
         className="w-full rounded-full mb-4"
       />
@@ -45,7 +45,7 @@ const TopUsers = () => {
     {/* Team Member 4 */}
     <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center">
       <img
-        src="https://spacema-dev.com/elevate/assets/images/team/2.jpg"
+        src="https://i.ibb.co/P4Dm7FC/tu1.jpg"
         alt="Team Member 4"
         className="w-full rounded-full mb-4"
       />

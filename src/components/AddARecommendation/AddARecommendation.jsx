@@ -61,7 +61,7 @@ const AddARecommendation = () => {
     try {
       // Send the form data to the backend server
       const { data } = await axios.post(
-        "http://localhost:5000/recommendation",
+        "prod-swap-hub-server.vercel.app/recommendation",
         recommendationData
       );
       console.log(data);

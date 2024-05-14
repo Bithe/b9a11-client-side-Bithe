@@ -19,7 +19,7 @@ const AllMyQueries = () => {
   const getAllMyQueries = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/my-queries/${user.email}`, {withCredentials: true}
+        `prod-swap-hub-server.vercel.app/my-queries/${user.email}`, {withCredentials: true}
       );
       setAllMyQueries(data);
     } catch (error) {
@@ -44,7 +44,7 @@ const handleDelete = async (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const response = await axios.delete(`http://localhost:5000/queries/${id}`);
+        const response = await axios.delete(`prod-swap-hub-server.vercel.app/queries/${id}`);
         const data = response.data;
         console.log(data);
         if (data.deletedCount > 0) {
