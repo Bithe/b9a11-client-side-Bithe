@@ -8,7 +8,7 @@ const RecentQueries = () => {
     const getAllQueries = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/recent-queries`);
+          `https://prod-swap-hub-server.vercel.app/recent-queries`);
         setAllQueries(data);
       } catch (error) {
         console.error("Error fetching queries:", error);

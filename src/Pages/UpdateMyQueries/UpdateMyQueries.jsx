@@ -57,7 +57,7 @@ const UpdateMyQueries = () => {
     try {
       // Send the form data to the backend server
       const { data } = await axios.put(
-        `http://localhost:5000/query/${_id}`,
+        `https://prod-swap-hub-server.vercel.app/query/${_id}`,
         updatedQueriesInfo
       );
       console.log(data);

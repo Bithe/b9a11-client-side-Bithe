@@ -3,7 +3,7 @@
 # ProdSwap
 ## Demo Site Link
 
-[ProdSwap Demo Site](http://localhost:5173/queries)
+[ProdSwap Demo Site](https://prodswap-hub.web.app/)
 
 ## Overview
 

@@ -11,11 +11,12 @@ const AllRecommendation = () => {
   const {_id} = query;
   
   const [recommendations, setRecommendations] = useState([]);
+  
 
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/recommendations/${_id}`);
+        const response = await axios.get(`https://prod-swap-hub-server.vercel.app/recommendations/${_id}`);
         setRecommendations(response.data);
       } catch (error) {
         console.error("Error fetching recommendations:", error);
@@ -23,6 +24,8 @@ const AllRecommendation = () => {
     };
     fetchRecommendations();
   }, [_id]); 
+
+  console.log(recommendations);
 
   return (
     <div className="">
