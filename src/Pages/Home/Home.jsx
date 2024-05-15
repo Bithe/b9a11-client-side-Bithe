@@ -1,13 +1,4 @@
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
 
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-
-// // import required modules
-// import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import { Link } from "react-router-dom";
 import SwiperCarousel from "../../components/Swiper/SwiperCarousel";
@@ -15,6 +6,10 @@ import RecentQueries from "./RecentQueries/RecentQueries";
 import { Helmet } from "react-helmet-async";
 import TopUsers from "./TopUsers/TopUsers";
 import TrailTales from "./TrailTales/TrailTales";
+
+
+import '../../components/Navbar/navbar.css';
+
 
 const Home = () => {
   return (

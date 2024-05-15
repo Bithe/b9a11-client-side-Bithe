@@ -13,6 +13,7 @@ const MyRecommendations = () => {
    
     getAllMyRecommendation();
   }, [user]);
+
    const getAllMyRecommendation = async () => {
       try {
         const { data } = await axios.get(
@@ -48,7 +49,7 @@ const handleDelete = async (id) => {
             text: "Your Craft has been deleted.",
             icon: "success"
           });
-          getAllMyRecommendation(); // Assuming this function retrieves updated query list
+          getAllMyRecommendation(); 
         }
       } catch (err) {
         console.log(err.message);

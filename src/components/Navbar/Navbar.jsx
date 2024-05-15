@@ -48,8 +48,12 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-               <img src="logo.jpg" alt="Company Logo" className="h-8 w-auto mr-2" />{" "}
-          <a className=" lg:text-3xl font-bold ">ProdSwap</a>
+              <img
+                src="logo.jpg"
+                alt="Company Logo"
+                className="h-8 w-auto mr-2"
+              />{" "}
+              <a className=" lg:text-3xl font-bold ">ProdSwap</a>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -60,55 +64,87 @@ const Navbar = () => {
               >
                 Home
               </NavLink>
-
               <NavLink
-                to="/all-art-craft"
+                to="/queries"
                 className={({ isActive }) =>
                   isActive
                     ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
                     : ""
                 }
               >
-                All Art & craft Items
+                Queries{" "}
               </NavLink>
-
               {/* PROTECTIVE ROUTE */}
-
               {/* PROTECTIVE ROUTE */}
               {user && (
                 <div className=" flex flex-col lg: justify-center gap-8">
-                  <NavLink
-                    to="/add-craft"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
-                        : ""
-                    }
-                  >
-                    Add Craft Item
-                  </NavLink>
-
-                  <NavLink
-                    to="/user-craft-list"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
-                        : "text-xl "
-                    }
-                  >
-                    My Art&Craft List{" "}
-                  </NavLink>
+                  <li>
+                    <details className="details-dropdown">
+                      <summary className=" font-bol">My</summary>
+                      <ul className="dropdown-menu">
+                        <li>
+                          <NavLink
+                            data-tooltip-id="recommendations-for-me"
+                            data-tooltip-content="Recommendations For Me"
+                            data-tooltip-place="top"
+                            to="/recommendations-for-me"
+                            className={({ isActive }) =>
+                              isActive
+                                ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4  font-bold border-[#1a3147] bg-white text-black"
+                                : ""
+                            }
+                          >
+                            Recommendations For Me
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            data-tooltip-id="my-queries"
+                            data-tooltip-content="My Queries"
+                            data-tooltip-place="top"
+                            to="/my-queries"
+                            className={({ isActive }) =>
+                              isActive
+                                ? "dark:bg-white dark:text-gray-900 border rounded-lg font-bold border-[#1a3147] bg-white text-black"
+                                : " "
+                            }
+                          >
+                            My Queries
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            data-tooltip-id="my-recommendations"
+                            data-tooltip-content="My recommendations"
+                            data-tooltip-place="top"
+                            to="/my-recommendations"
+                            className={({ isActive }) =>
+                              isActive
+                                ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
+                                : ""
+                            }
+                          >
+                            My recommendations
+                          </NavLink>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
                 </div>
               )}
             </ul>
           </div>
-          <img src="logo.jpg" alt="Company Logo" className="h-8 w-auto mr-2 hidden sm:block" />{" "}
+          <img
+            src="logo.jpg"
+            alt="Company Logo"
+            className="h-8 w-auto mr-2 hidden sm:block"
+          />{" "}
           <a className=" lg:text-3xl font-bold hidden sm:block ">ProdSwap</a>
         </div>
 
         {/* larger device */}
         <div className="navbar-center hidden lg:flex gap-2 md:px-8 md:hidden">
-          <ul className="menu menu-horizontal px-1 gap-8 justify-center items-center ">
+          <ul className=" menu-horizontal px-1 gap-8 justify-center items-center menu menu-sm">
             <Tooltip id="home" place="top" effect="solid"></Tooltip>
             <NavLink
               data-tooltip-id="home"
@@ -144,60 +180,75 @@ const Navbar = () => {
 
             {user && (
               <div className=" flex justify-center items-center gap-8">
-                <Tooltip
-                  id="recommendations-for-me"
-                  place="top"
-                  effect="solid"
-                ></Tooltip>
+                <li>
+                  <details className="details-dropdown">
+                    <summary className="text-lg font-bol">My</summary>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <Tooltip
+                          id="recommendations-for-me"
+                          place="top"
+                          effect="solid"
+                        ></Tooltip>
 
-                <NavLink
-                  data-tooltip-id="recommendations-for-me"
-                  data-tooltip-content="Recommendations For Me"
-                  data-tooltip-place="top"
-                  to="/recommendations-for-me"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
-                      : "text-xl "
-                  }
-                >
-                  Recommendations For Me
-                </NavLink>
+                        <NavLink
+                          data-tooltip-id="recommendations-for-me"
+                          data-tooltip-content="Recommendations For Me"
+                          data-tooltip-place="top"
+                          to="/recommendations-for-me"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
+                              : "text-xl "
+                          }
+                        >
+                          Recommendations For Me
+                        </NavLink>
+                      </li>
+                      <li>
+                        <Tooltip
+                          id="my-queries"
+                          place="top"
+                          effect="solid"
+                        ></Tooltip>
 
-                <Tooltip id="my-queries" place="top" effect="solid"></Tooltip>
-
-                <NavLink
-                  data-tooltip-id="my-queries"
-                  data-tooltip-content="My Queries"
-                  data-tooltip-place="top"
-                  to="/my-queries"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
-                      : "text-xl "
-                  }
-                >
-                  My Queries
-                </NavLink>
-
-                <Tooltip
-                  id="my-recommendations"
-                  place="top"
-                  effect="solid"
-                ></Tooltip>
-                <NavLink
-                  data-tooltip-id="my-recommendations"
-                  data-tooltip-content="My recommendations"
-                  data-tooltip-place="top"
-                  to="/my-recommendations"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
-                      : "text-xl "
-                  }
-                >
-                  My recommendations
-                </NavLink>
+                        <NavLink
+                          data-tooltip-id="my-queries"
+                          data-tooltip-content="My Queries"
+                          data-tooltip-place="top"
+                          to="/my-queries"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
+                              : "text-xl "
+                          }
+                        >
+                          My Queries
+                        </NavLink>
+                      </li>
+                      <li>
+                        <Tooltip
+                          id="my-recommendations"
+                          place="top"
+                          effect="solid"
+                        ></Tooltip>
+                        <NavLink
+                          data-tooltip-id="my-recommendations"
+                          data-tooltip-content="My recommendations"
+                          data-tooltip-place="top"
+                          to="/my-recommendations"
+                          className={({ isActive }) =>
+                            isActive
+                              ? "dark:bg-white dark:text-gray-900 border rounded-lg p-4 text-lg font-bold border-[#1a3147] bg-white text-black"
+                              : "text-xl "
+                          }
+                        >
+                          My recommendations
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
               </div>
             )}
           </ul>
