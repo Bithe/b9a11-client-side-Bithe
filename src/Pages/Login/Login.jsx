@@ -60,8 +60,8 @@ const Login = () => {
           <div className="flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
             <div className="w-full">
               <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
-                <div className="g-0 lg:flex lg:flex-wrap">
-                  <div className="px-4 md:px-0 lg:w-6/12">
+                <div className="g-0 lg:flex lg:flex-wrap justify-center items-center">
+                  <div className=" px-4 md:px-0 lg:w-6/12">
                     <div className="md:mx-6 md:p-12">
                       <div className="text-center">
                         <img
@@ -129,14 +129,14 @@ const Login = () => {
 
                         <div className="mb-12 pb-1 pt-1 text-center">
                           <button
-                            className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xl font-bold uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                            className="flex items-center justify-center w-full px-6 py-2 mx-2 text-sm font-bold text-white transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
                             type="submit"
                             data-twe-ripple-init
                             data-twe-ripple-color="light"
-                            style={{
-                              background:
-                                "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
-                            }}
+                            // style={{
+                            //   background:
+                            //     "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
+                            // }}
                           >
                             Log in
                           </button>
@@ -159,7 +159,6 @@ const Login = () => {
                         <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
                       </div>
 
-                      {/* GITHUB LOGIN */}
                       <SocialLogin></SocialLogin>
 
                       <div className="flex items-center justify-between pb-6">
@@ -187,26 +186,7 @@ const Login = () => {
                     </div>
                   </div>
 
-                  <div
-                    className="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-e-lg lg:rounded-bl-none"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
-                    }}
-                  >
-                    <div className="px-4 py-6 text-white md:mx-6 md:p-12">
-                      <h4 className="mb-6 text-xl font-semibold">
-                        Welcome Back to Our ArtScape Website!<br></br>
-                        Sign in to access your account and manage your art and
-                        craft preferences seamlessly.
-                      </h4>
-                      <p className="text-sm">
-                        Keep track of your favorite listings and preferences for
-                        quick access. Get Special Offers after login to our
-                        site.
-                      </p>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
             </div>

@@ -170,14 +170,13 @@ const Register = () => {
 
                       {/*  */}
 
-                      <div className="text-center lg:text-left">
+                      <div className="text-center py-8 lg:text-left">
                         <button
                           type="submit"
-                          className="btn inline-block w-full rounded bg-primary px-7 pb-2 pt-3 text-xl font-bold uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                          style={{
-                            background:
-                              "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
-                          }}
+                          className=" pb-2 pt-3
+                          
+                          flex items-center justify-center w-full mx-2 text-sm font-bold text-white transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:bg-blue-400 focus:outline-none"
+                         
                         >
                           Register
                         </button>

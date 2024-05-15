@@ -332,35 +332,33 @@ const Navbar = () => {
               </div>
               {/*  */}
               <NavLink
-                onClick={logout}
-                to="/login"
-                className="btn bg-[#db3665] text-white font-semibold text-lg"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
-                }}
-              >
-                Logout
-              </NavLink>
+  onClick={logout}
+  to="/login"
+  className="btn bg-[#319795] text-white font-semibold text-lg hover:text-black"
+  style={{
+    background: "linear-gradient(90deg, bg-teal-500 0%, bg-blue-500 35%, bg-blue-500 100%)",
+  }}
+>
+  Logout
+</NavLink>
+
             </div>
           ) : (
             <div className="gap-4 flex">
               <NavLink
                 to="/login"
-                className="btn bg-[#db3665] text-white font-semibold text-lg"
+                className="btn bg-[#319795] text-white font-semibold text-lg hover:text-black"
                 style={{
-                  background:
-                    "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
+                  background: "linear-gradient(90deg, bg-teal-500 0%, bg-blue-500 35%, bg-blue-500 100%)",
                 }}
               >
                 Login
               </NavLink>
               <NavLink
                 to="/register"
-                className="btn text-white font-semibold text-lg"
+                className="btn bg-[#319795] text-white font-semibold text-lg hover:text-black"
                 style={{
-                  background:
-                    "linear-gradient(90deg, #020024 0%, #090979 35%, #00D4FF 100%)",
+                  background: "linear-gradient(90deg, bg-teal-500 0%, bg-blue-500 35%, bg-blue-500 100%)",
                 }}
               >
                 Register
