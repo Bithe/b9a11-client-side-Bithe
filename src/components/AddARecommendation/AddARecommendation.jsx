@@ -121,7 +121,7 @@ const AddARecommendation = () => {
                     Recommendation Title
                   </label>
                   <input
-                  required
+                    required
                     id="recommendationQueryTitle"
                     type="text"
                     name="recommendationQueryTitle"
@@ -134,7 +134,7 @@ const AddARecommendation = () => {
                     Recommended product Name
                   </label>
                   <input
-                  required
+                    required
                     id="recommendedProductName"
                     type="text"
                     name="recommendedProductName"
@@ -146,7 +146,8 @@ const AddARecommendation = () => {
                   <label className="text-gray-700 " htmlFor="comment">
                     Recommended Product Image
                   </label>
-                  <input required
+                  <input
+                    required
                     type="url"
                     id="recommendedProductImage"
                     name="recommendedProductImage"
@@ -158,7 +159,7 @@ const AddARecommendation = () => {
                     Recommendation reason
                   </label>
                   <textarea
-required
+                    required
                     id="recommendationReason"
                     name="recommendationReason"
                     type="text"

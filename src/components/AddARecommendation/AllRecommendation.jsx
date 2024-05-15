@@ -25,7 +25,7 @@ const AllRecommendation = () => {
   }, [_id]); 
 
   return (
-    <div>
+    <div className="">
       {recommendations.map((recommendation) => (
         <div key={recommendation._id} className="max-w-lg mx-auto border px-6 py-4 rounded-lg">
           <div className="flex items-center mb-6">

@@ -49,7 +49,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <img
-                src="logo.jpg"
+                src="https://i.ibb.co/pKdT71V/logo.jpg"
                 alt="Company Logo"
                 className="h-8 w-auto mr-2"
               />{" "}
