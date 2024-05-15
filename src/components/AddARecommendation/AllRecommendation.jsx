@@ -30,12 +30,12 @@ const AllRecommendation = () => {
         <div key={recommendation._id} className="max-w-lg mx-auto border px-6 py-4 rounded-lg">
           <div className="flex items-center mb-6">
             <img
-              src={recommendation.recommendedProductImage} 
+              src={recommendation.recommendedProductImage || "https://i.ibb.co/qxq2Dcw/def.jpg" } 
               alt="Avatar"
               className="w-12 h-12 rounded-full mr-4"
             />
             <div>
-              <div className="text-lg font-medium text-gray-800">{recommendation.userName}</div>
+              <div className="text-lg font-medium text-gray-800">{recommendation.recommendedUserUserName}</div>
               <div className="text-gray-500">{new Date(recommendation.recommendationPostedTimestamp).toLocaleString()}</div>
             </div>
           </div>

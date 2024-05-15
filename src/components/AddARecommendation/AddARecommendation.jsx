@@ -75,7 +75,7 @@ const AddARecommendation = () => {
   return (
     <div>
       <section>
-        <div className="flex flex-col md:flex-row justify-around gap-5 items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto my-8 border ">
+        <div className="flex flex-col md:flex-row justify-around gap-5 items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto my-8  ">
           {/* USER INFOR*/}
           <div className="flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]">
             <div className="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600 dark:border-gray-700 dark:hover:border-transparent ">
@@ -121,6 +121,7 @@ const AddARecommendation = () => {
                     Recommendation Title
                   </label>
                   <input
+                  required
                     id="recommendationQueryTitle"
                     type="text"
                     name="recommendationQueryTitle"
@@ -133,6 +134,7 @@ const AddARecommendation = () => {
                     Recommended product Name
                   </label>
                   <input
+                  required
                     id="recommendedProductName"
                     type="text"
                     name="recommendedProductName"
@@ -144,7 +146,7 @@ const AddARecommendation = () => {
                   <label className="text-gray-700 " htmlFor="comment">
                     Recommended Product Image
                   </label>
-                  <input
+                  <input required
                     type="url"
                     id="recommendedProductImage"
                     name="recommendedProductImage"
@@ -156,6 +158,7 @@ const AddARecommendation = () => {
                     Recommendation reason
                   </label>
                   <textarea
+required
                     id="recommendationReason"
                     name="recommendationReason"
                     type="text"

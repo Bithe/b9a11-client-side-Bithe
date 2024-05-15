@@ -68,14 +68,11 @@ const QueryDetails = () => {
       {/* ADD A RECOMMENDATION AND USER INFO */}
       <section>
         <div className="text-center">
-          <h3 className="text-4xl font-bold">Our Recipes</h3>
+          <h3 className="text-4xl font-bold">Add a Recommendation</h3>
 
           <p className="space-y-8 m-8">
-            Italian cuisine is renowned for its rich flavors and comforting
-            dishes, and pasta is undoubtedly one of its most beloved creations.{" "}
-            <br /> Whether it is a hearty bowl of spaghetti Bolognese or
-            delicate filled with creamy ricotta, Italian pasta dishes never fail
-            to tantalize the taste buds.{" "}
+          Join the conversation, contribute your own recommendations, and be part of our vibrant community of adventurers. 
+            <br /> Start exploring now!
           </p>
         </div>
 
@@ -86,14 +83,10 @@ const QueryDetails = () => {
 
       <section className="my-10">
         <div className="text-center">
-          <h3 className="text-4xl font-bold">All Reco</h3>
+          <h3 className="text-4xl font-bold">All Recommendations</h3>
 
           <p className="space-y-8 m-8">
-            Italian cuisine is renowned for its rich flavors and comforting
-            dishes, and pasta is undoubtedly one of its most beloved creations.{" "}
-            <br /> Whether it is a hearty bowl of spaghetti Bolognese or
-            delicate filled with creamy ricotta, Italian pasta dishes never fail
-            to tantalize the taste buds.{" "}
+          Discover a curated selection of recommendations from our community. Whether you are looking for gear reviews,   <br /> hiking trails, or camping tips, find valuable insights shared by fellow outdoor enthusiasts.
           </p>
         </div>
         <AllRecommendation></AllRecommendation>
