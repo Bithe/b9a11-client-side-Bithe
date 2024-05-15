@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/queries",
         element: <Queries />,
-        loader: () => fetch("https://prod-swap-hub-server.vercel.app/queries")
+        loader: () => fetch("http://localhost:5000/queries")
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://prod-swap-hub-server.vercel.app/query/${params.id}`),
+          fetch(`http://localhost:5000/query/${params.id}`),
       },
 
       {
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://prod-swap-hub-server.vercel.app/query/${params.id}`),
+          fetch(`http://localhost:5000/query/${params.id}`),
       },
 
       {

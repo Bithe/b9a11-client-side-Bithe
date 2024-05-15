@@ -47,9 +47,9 @@ const AddARecommendation = () => {
       recommendedProductImage,
       recommendationReason,
       recommendationPostedTimestamp,
+      queryId,
 
       queryPosterUserInf: {
-        queryId,
         email,
         userName,
       },
@@ -61,7 +61,7 @@ const AddARecommendation = () => {
     try {
       // Send the form data to the backend server
       const { data } = await axios.post(
-        "https://prod-swap-hub-server.vercel.app/recommendation",
+        "http://localhost:5000/recommendation",
         recommendationData
       );
       console.log(data);
@@ -176,8 +176,6 @@ const AddARecommendation = () => {
           </section>
         </div>
       </section>
-
-     
     </div>
   );
 };

@@ -139,8 +139,7 @@ const Queries = () => {
               <div className="flex items-center justify-between ">
                 <div className="flex items-center space-x-3 ">
                   <h2>
-                    Total Recommanded:{" "}
-                    {query.addQueriesUserInfo.recommendationCount}
+                    Total Recommanded: {query.recommendationCount}
                   </h2>
                 </div>
                 <button
