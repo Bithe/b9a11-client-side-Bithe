@@ -47,7 +47,7 @@ const AddQueries = () => {
     try {
       // Send the form data to the backend server
       const { data } = await axios.post(
-        "https://prod-swap-hub-server.vercel.app/queries",
+        "http://localhost:5000/queries",
         addQueriesInfo
       );
       console.log(data);

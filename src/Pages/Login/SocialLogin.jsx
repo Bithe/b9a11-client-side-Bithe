@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 
 const SocialLogin = () => {
 //   const { googleLogin, githubLogin, twitterLogin } = useContext(AuthContext);
@@ -11,17 +12,24 @@ const SocialLogin = () => {
   const location = useLocation();
   const back = location?.state?.from || "/";
 
-  const handleSocialLogin = (socialProvider) => {
-    socialProvider()
-      .then((result) => {
-        if (result.user) {
-          navigate(back);
-        }
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+  const handleSocialLogin = async (socialProvider) => {
+    try {
+      const result = await socialProvider();
+      if (result.user) {
+        navigate(back);
+
+        const { data } = await axios.post(
+          'http://localhost:5000/jwt',
+          { email: result?.user?.email },
+          { withCredentials: true }
+        );
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
 
   return (
     <div className="flex justify-around py-8 ">
