@@ -52,7 +52,7 @@ const handleDelete = async (id) => {
             text: "Your Craft has been deleted.",
             icon: "success"
           });
-          getAllMyQueries(); // Assuming this function retrieves updated query list
+          getAllMyQueries(); 
         }
       } catch (err) {
         console.log(err.message);
