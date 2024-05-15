@@ -41,6 +41,10 @@ The ProdSwap Alternative Product Information System (APIS) is a web-based platfo
 
 - Access and use the system seamlessly on various devices.
 
+### Responsive Design
+
+- My selected category is Hicking Equipment.
+
 ## Installation
 
 1. **Clone the repository:**
